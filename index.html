@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
@@ -13,11 +14,11 @@
             <h1>ToDoList</h1>
         </header>
         <main>
-            <ul v-for="element in coseDaFare">
-                <li> {{element}} </li>
+            <ul>
+                <li v-for="element in coseDaFare">  {{element}} <i @click="svuota()" class="fa-solid fa-xmark" style="color: red;"></i> </li>
             </ul>
-            <input v-model="coseDaFare[5]" type="text">
-            <a href="#" type="button">AGGIUNGI</a>
+            <input v-model="userCoseDaFare" type="text">
+            <a @click="stampa()" href="#" type="button">AGGIUNGI</a>
         </main>
 
     </div>
