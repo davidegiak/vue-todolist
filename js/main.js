@@ -18,10 +18,7 @@ const { createApp } = Vue
         this.coseDaFare.push(this.userCoseDaFare)
       },
       svuota(elemento) {
-        this.coseDaFare[elemento] = "";
-        if (this.coseDaFare[elemento] == "") {
-          document.querySelector("li").innerHTML = ""
-        }
+        this.coseDaFare.splice(elemento , 1)
       }
     }
   }).mount('#app')
