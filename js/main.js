@@ -4,21 +4,53 @@ const { createApp } = Vue
     data() {
       return {
         coseDaFare: [
-            "fare la spesa ",
-            "portare fuori il cane",
-            "dare da mangiare ai pesci",
-            "falciare il prato",
-            "prendere una birra con ciccio",
+          {
+            titolo:"fare la spesa ",
+            done: false
+          },
+          {
+            titolo:"portare fuori il cane",
+            done: true
+          },
+          {
+            titolo:"dare da mangiare ai pesci",
+            done:false
+          },
+          {
+            titolo:"falciare il prato",
+            done:true
+          },
+          {
+            titolo:"prendere una birra con ciccio",
+            done:false
+          }   
         ],
-        userCoseDaFare: ""
+        userCoseDaFare: [
+          {
+            titolo:"",
+            done:false
+          }
+        ]
       }
     },
     methods: {
       stampa() {
-        this.coseDaFare.push(this.userCoseDaFare)
+        return this.coseDaFare.push(this.userCoseDaFare);
+
       },
       svuota(elemento) {
         this.coseDaFare.splice(elemento , 1)
+      },
+      stato(elemento) {
+        if (this.coseDaFare[elemento].done) {
+          return "green"
+        }
+        else{
+          return "red"
+        }
+      },
+      cambiaStato(elemento) { 
+        return ( this.coseDaFare[elemento].done == true) ? this.coseDaFare[elemento].done = false : this.coseDaFare[elemento].done = true;
       }
     }
   }).mount('#app')
