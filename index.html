@@ -15,7 +15,7 @@
         </header>
         <main>
             <ul>
-                <li v-for="element in coseDaFare">  {{element}} <i @click="svuota()" class="fa-solid fa-xmark" style="color: red;"></i> </li>
+                <li  v-for="element, index in coseDaFare">  {{element}} <i @click="svuota(index)" class="fa-solid fa-xmark" style="color: red;"></i> </li>
             </ul>
             <input v-model="userCoseDaFare" type="text">
             <a @click="stampa()" href="#" type="button">AGGIUNGI</a>

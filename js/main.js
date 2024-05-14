@@ -17,9 +17,11 @@ const { createApp } = Vue
       stampa() {
         this.coseDaFare.push(this.userCoseDaFare)
       },
-      svuota() {
-        this.coseDaFare.classlist.add("remove");
-        
+      svuota(elemento) {
+        this.coseDaFare[elemento] = "";
+        if (this.coseDaFare[elemento] == "") {
+          document.querySelector("li").innerHTML = ""
+        }
       }
     }
   }).mount('#app')
