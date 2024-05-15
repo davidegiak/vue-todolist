@@ -16,10 +16,15 @@
             </header>
             <main>
                 <ul>
-                    <li @click="cambiaStato(index)" :class="stato(index)" v-for="element , index in coseDaFare">  {{element.titolo}} <i :class="stato(index)" @click="svuota(index)" class="fa-solid fa-xmark"></i> </li>
+                    <li :class="stato(index)" v-for="element , index in coseDaFare">
+                        <span @click="cambiaStato(index)" :class="stato(index)">
+                            {{element.titolo}} 
+                        </span>
+                        <i :class="stato(index)" @click="svuota(index)" class="fa-solid fa-xmark"></i> 
+                    </li>
                 </ul>
                 <div class="input-cont">
-                    <input v-model="userCoseDaFare.titolo" type="text" style="color: black;">
+                    <input v-model="userImput" type="text" style="color: black;">
                     <a @click="stampa()" href="#" type="button">AGGIUNGI</a>
                 </div>
             </main>

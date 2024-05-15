@@ -25,20 +25,23 @@ const { createApp } = Vue
             done:false
           }   
         ],
-        userCoseDaFare: [
-          {
-            titolo:"",
-            done:false
-          }
-        ]
+        // userCoseDaFare: [
+        //   {
+        //     titolo:"",
+        //     done:false
+        //   }
+        // ]
+        userImput: ""
       }
     },
     methods: {
       stampa() {
-        return this.coseDaFare.push(this.userCoseDaFare);
+        // return this.coseDaFare.push(this.userCoseDaFare);
+        this.coseDaFare.push({titolo:this.userImput, done:false})
 
       },
       svuota(elemento) {
+        console.log("svuota");
         this.coseDaFare.splice(elemento , 1)
       },
       stato(elemento) {
@@ -50,6 +53,7 @@ const { createApp } = Vue
         }
       },
       cambiaStato(elemento) { 
+        console.log("cambia");
         return ( this.coseDaFare[elemento].done == true) ? this.coseDaFare[elemento].done = false : this.coseDaFare[elemento].done = true;
       }
     }
