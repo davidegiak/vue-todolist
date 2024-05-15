@@ -24,14 +24,12 @@
                     </li>
                 </ul>
                 <div class="input-cont">
-                    <input v-model="userImput" type="text" style="color: black;">
+                    <input @keyup.enter="stampa()" v-model="userImput" type="text" style="color: black;">
                     <a @click="stampa()" href="#" type="button">AGGIUNGI</a>
                 </div>
             </main>
         </div>
-
     </div>
-
     <script src="./js/main.js"></script>
 </body>
 </html>

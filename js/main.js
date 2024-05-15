@@ -37,8 +37,8 @@ const { createApp } = Vue
     methods: {
       stampa() {
         // return this.coseDaFare.push(this.userCoseDaFare);
-        this.coseDaFare.push({titolo:this.userImput, done:false})
-
+        this.coseDaFare.push({titolo:this.userImput, done:false});
+        this.userImput = ""
       },
       svuota(elemento) {
         console.log("svuota");

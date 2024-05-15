@@ -72,3 +72,8 @@ a {
 .red {
     color: red;
 }
+
+span {
+    cursor: pointer;
+    margin-right: 0.5rem;
+}
